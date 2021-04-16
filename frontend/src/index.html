@@ -43,7 +43,7 @@ rel="stylesheet"
                                         <h3 _ngcontent-c2="" class="h-t text-center text-white text-uppercase">Bienvenue sur le portail Assuré de la CNSS</h3>
                                         <p _ngcontent-c2="" class="blockquote text-white">La connexion à votre espace privé, vous donne un accès sécurisé à une panoplie de services en ligne. Suivez votre protection sociale en toute simplicité.</p>
                                         <div _ngcontent-c2="" class="text-center">
-                                        <button _ngcontent-c2="" class="btn-lg btn btn-primary text-uppercase signup-button text-white"> Créer mon compte </button>
+                                        <button _ngcontent-c2="" class="btn-lg btn btn-primary text-uppercase signup-button text-white" id="myBtn"> Créer mon compte </button>
                                         </div>
                                         </div>
                                         </div>
@@ -83,11 +83,109 @@ rel="stylesheet"
             </div>
         </div>
     </main>
+
       <div class="footer">
         <p>© CNSS 2020 tous droits réservés</p>
       </div>
+     <div class="modal" id="myModal">
+        <div class="modal-content"  style=" padding: 20px; width: 50%;">
+            <app-signup-modal _nghost-c3="">
+                <div _ngcontent-c3="">
+                    <form _ngcontent-c3="" class="form-horizontal ng-untouched ng-pristine ng-invalid" novalidate="">
+                        <div _ngcontent-c3="" class="modal-header">
+                            <h4 _ngcontent-c3="" class="modal-title text-uppercase font-montserrat">Créer mon compte</h4>
+                            <button _ngcontent-c3="" aria-label="Close"  type="button"><span _ngcontent-c3="" class="close">×</span></button>
+                        </div>
+                        <div _ngcontent-c3="" class="modal-body">
+                        <div _ngcontent-c3="" class="form-group container text-rtl-left">
+                        <div _ngcontent-c3="" class="row">
+                        <input _ngcontent-c3="" class="form-control col-11 ng-untouched ng-pristine ng-invalid" formcontrolname="immatriculation" mask="000000000" this.submited="true;" type="text" placeholder="N° immatriculation">
+
+                        </div>
+                        </div>
+                        <div _ngcontent-c3="" class="form-group text-rtl-left container">
+                        <div _ngcontent-c3="" class="row">
+                        <input _ngcontent-c3="" class="form-control col-11 ng-untouched ng-pristine ng-invalid" formcontrolname="code" type="text" placeholder="N° de carte nationale d'identité/Passeport/Séjour">
+                
+                        </div>
+                        </div>
+                        <div _ngcontent-c3="" class="form-group text-rtl-left container">
+                        <div _ngcontent-c3="" class="row">
+                        
+                        <input _ngcontent-c3="" class="form-control col-11 ng-untouched ng-pristine ng-invalid" formcontrolname="dateNaissance" ngbdatepicker="" type="date" placeholder="Date de naissance">
+                    
+
+                    
+                
+                        </div>
+                        </div>
+                        <div  _ngcontent-c3="" formgroupname="emailGroup" class="ng-untouched ng-pristine ng-invalid" >
+                        <div _ngcontent-c3="" class="form-group text-rtl-left container">
+                        <div _ngcontent-c3="" class="row">
+                        <input _ngcontent-c3="" class="form-control col-11 ng-untouched ng-pristine ng-invalid" formcontrolname="email" type="email" placeholder="Email">
+                    
+                        <div _ngcontent-c3="" class="col-12 no-padding" style="margin-top: -0px;">
+                        <span _ngcontent-c3="" class="small">(Email servira pour la confirmation de la création du compte)</span>
+                        </div><!----><!---->
+                        </div>
+                        </div>
+                        <div _ngcontent-c3="" class="form-group text-rtl-left container">
+                        <div _ngcontent-c3="" class="row">
+                        <input _ngcontent-c3="" class="form-control col-11 ng-untouched ng-pristine ng-invalid" formcontrolname="confirmEmail" type="email" placeholder="Confirmer votre email">
+                    
+                        </div>
+                        </div>
+                        </div>
+                        <div _ngcontent-c3="" class="form-group text-rtl-left container">
+                        <div _ngcontent-c3="" class="row"><div _ngcontent-c3="" class="input-group col-11 p-0">
+                        <input _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid" formcontrolname="telephone" type="tel" placeholder="N° Téléphone">
+                        </div>
+                    
+                        </div>
+                        </div>
+                        
+                        </div>
+                        <div _ngcontent-c3="" class="modal-footer">
+                    
+                        <!----><!----> 
+                        <button _ngcontent-c3="" class="btn bgc-green2 btn-primary" type="submit" disabled=""><!----> Envoyer </button>
+                        <button _ngcontent-c3="" class="btn btn-default margin-lr" type="button"> Fermer </button>
+                        <!----><!----><!----><!---->
+                        </div>
+                        
+                    </form>
+                </div>
+            </app-signup-modal>
+        </div>
+     </div>
     </div>
 
+    <script>
+                var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
     <!-- MDB -->
 <script
 type="text/javascript"
